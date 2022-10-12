@@ -23,13 +23,7 @@ public class Subject {
 	
 	private int time;
 	
-	@OneToMany(mappedBy="subject",cascade=CascadeType.ALL)
-	private Set<Question> question;
-	
-	
-	@ManyToOne
-	@JoinColumn(name="branch_id")
-	private Branch branch;
+	private int branchId;
 	
 	
 
@@ -56,13 +50,7 @@ public class Subject {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Subject(String subjectName, int time, Set<Question> question) {
-		super();
-		this.subjectName = subjectName;
-		
-		this.time = time;
-		this.question = question;
-	}
+
 
 	public int getTime() {
 		return time;
@@ -72,12 +60,21 @@ public class Subject {
 		this.time = time;
 	}
 
-	public Set<Question> getQuestion() {
-		return question;
+	public int getBranchId() {
+		return branchId;
 	}
 
-	public void setQuestion(Set<Question> question) {
-		this.question = question;
+	public void setBranchId(int branchId) {
+		this.branchId = branchId;
 	}
+
+	public Subject(int subjectId, String subjectName, int time, int branchId) {
+		super();
+		this.subjectId = subjectId;
+		this.subjectName = subjectName;
+		this.time = time;
+		this.branchId = branchId;
+	}
+	
 
 }

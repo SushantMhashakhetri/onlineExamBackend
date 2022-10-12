@@ -20,11 +20,6 @@ public class Branch {
 	private int branchId;
 	private String branchName;
 	
-	@OneToMany(mappedBy="branch",cascade=CascadeType.ALL)
-	private Set<Subject> subject;
-	
-	
-	
 	
 	public int getBranchId() {
 		return branchId;
@@ -42,24 +37,18 @@ public class Branch {
 		this.branchName = branchName;
 	}
 
-	public Set<Subject> getSubject() {
-		return subject;
-	}
-
-	public void setSubject(Set<Subject> subject) {
-		this.subject = subject;
-	}
-
 	public Branch() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Branch(String branchName, Set<Subject> subject) {
+	public Branch(int branchId, String branchName) {
 		super();
+		this.branchId = branchId;
 		this.branchName = branchName;
-		this.subject = subject;
 	}
+
+
 
 
 }

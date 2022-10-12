@@ -5,29 +5,54 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name = "question")
+@Table(name = "question")
 public class Question {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int questionId;
+	private int que_id;
+	
+	@Column(name="question")
 	private String question;
-	private String option1;
-	private String option2;
-	private String option3;
-	private String option4;
-	private String correctOption;
+	@Column(name="op1")
+	private String op1;
+	@Column(name="op2")
+	private String op2;
+	@Column(name="op3")
+	private String op3;
+	@Column(name="op4")
+	private String op4;
+	@Column(name="corr_ans")
+	private String corr_ans;
+	
+	public Question() {
+		super();
+	
+	}
+	
+	public Question(int que_id, String question, String op1, String op2, String op3, String op4, String corr_ans,
+			int branchId, int subjectId) {
+		super();
+		this.que_id = que_id;
+		this.question = question;
+		this.op1 = op1;
+		this.op2 = op2;
+		this.op3 = op3;
+		this.op4 = op4;
+		this.corr_ans = corr_ans;
+		this.branchId = branchId;
+		this.subjectId = subjectId;
+	}
+	
 
 
-	@Column(name="branch_id")
+	@Column(name="branchId")
 	private int branchId;
 	
-	@ManyToOne
-	@JoinColumn(name="subject_id")
-	private Subject subject;
+	private int subjectId;
 
 
 
@@ -43,95 +68,116 @@ public class Question {
 
 
 
-	public Subject getSubject() {
-		return subject;
+
+
+
+
+
+
+
+
+
+
+
+	public int getQue_id() {
+		return que_id;
 	}
 
 
 
-	public void setSubject(Subject subject) {
-		this.subject = subject;
+	public void setQue_id(int que_id) {
+		this.que_id = que_id;
 	}
 
 
-
-	public Question() {
-		super();
-	
-	}
-
-
-
-	public Question(String question, String option1, String option2, String option3, String option4,
-			String correctOption,int branchId, Subject subject) {
-		super();
-		this.question = question;
-		this.option1 = option1;
-		this.option2 = option2;
-		this.option3 = option3;
-		this.option4 = option4;
-		this.correctOption = correctOption;
-
-		this.branchId = branchId;
-		this.subject = subject;
-	}
-
-
-
-	public int getQuestionId() {
-		return questionId;
-	}
-
-	public void setQuestionId(int questionId) {
-		this.questionId = questionId;
-	}
 
 	public String getQuestion() {
 		return question;
 	}
 
+
+
 	public void setQuestion(String question) {
 		this.question = question;
 	}
 
-	public String getOption1() {
-		return option1;
+
+
+	public String getOp1() {
+		return op1;
 	}
 
-	public void setOption1(String option1) {
-		this.option1 = option1;
+
+
+	public void setOp1(String op1) {
+		this.op1 = op1;
 	}
 
-	public String getOption2() {
-		return option2;
+
+
+	public String getOp2() {
+		return op2;
 	}
 
-	public void setOption2(String option2) {
-		this.option2 = option2;
+
+
+	public void setOp2(String op2) {
+		this.op2 = op2;
 	}
 
-	public String getOption3() {
-		return option3;
+
+
+	public String getOp3() {
+		return op3;
 	}
 
-	public void setOption3(String option3) {
-		this.option3 = option3;
+
+
+	public void setOp3(String op3) {
+		this.op3 = op3;
 	}
 
-	public String getOption4() {
-		return option4;
+
+
+	public String getOp4() {
+		return op4;
 	}
 
-	public void setOption4(String option4) {
-		this.option4 = option4;
+
+
+	public void setOp4(String op4) {
+		this.op4 = op4;
 	}
 
-	public String getCorrectOption() {
-		return correctOption;
+
+
+	public String getCorr_ans() {
+		return corr_ans;
 	}
 
-	public void setCorrectOption(String correctOption) {
-		this.correctOption = correctOption;
+
+
+	public void setCorr_ans(String corr_ans) {
+		this.corr_ans = corr_ans;
 	}
+
+
+
+	public int getSubjectId() {
+		return subjectId;
+	}
+
+
+
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
+	}
+
+
+
+
+
+
+
 
 }

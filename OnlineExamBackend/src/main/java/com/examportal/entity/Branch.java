@@ -1,24 +1,38 @@
 package com.examportal.entity;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.persistence.OneToMany;
 
 
-@Entity
+@Entity(name = "branch")
+@Table(name = "branch")
 public class Branch {
 	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "branchId")
 	private int branchId;
+	
+	@Column(name = "branchName")
 	private String branchName;
+	
+	public Branch() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Branch(int branchId, String branchName) {
+		super();
+		this.branchId = branchId;
+		this.branchName = branchName;
+	}
+
 	
 	
 	public int getBranchId() {
@@ -37,16 +51,6 @@ public class Branch {
 		this.branchName = branchName;
 	}
 
-	public Branch() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Branch(int branchId, String branchName) {
-		super();
-		this.branchId = branchId;
-		this.branchName = branchName;
-	}
 
 
 

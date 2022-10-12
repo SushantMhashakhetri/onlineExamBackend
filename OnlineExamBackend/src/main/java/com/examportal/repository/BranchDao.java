@@ -6,5 +6,5 @@ import com.examportal.entity.Branch;
 
 
 public interface BranchDao  extends JpaRepository<Branch, Integer>{
-
+	
 }

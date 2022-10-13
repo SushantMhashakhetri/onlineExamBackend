@@ -26,17 +26,21 @@ public class Answer {
 	@Column(name="username",nullable = false)
 	private String username;
 	
+	@Column(name="subjectId",nullable = false)
+	private int subjectId;
+	
 	public Answer() {
 		super();
 	}
 
-	public Answer(int ansId, int que_id, String selectedAns, String corr_ans, String username) {
+	public Answer(int ansId, int que_id, String selectedAns, String corr_ans, String username,int subjectId) {
 		super();
 		this.ansId = ansId;
 		this.que_id = que_id;
 		this.selectedAns = selectedAns;
 		this.corr_ans = corr_ans;
 		this.username = username;
+		this.subjectId = subjectId;
 	}
 
 	public int getAnsId() {
@@ -77,6 +81,14 @@ public class Answer {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public int getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
 	}
 	
 }

@@ -1,5 +1,9 @@
 package com.examportal.services;
 
-public interface StudentService {
+import com.examportal.entity.Answer;
 
+public interface StudentService {
+	boolean saveAns(Answer ans);
+	int result(String username,int subject_id);
+	boolean isAttempted(String username,int subject_id);
 }

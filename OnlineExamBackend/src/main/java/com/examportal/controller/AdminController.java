@@ -93,10 +93,20 @@ public class AdminController {
 		return queService.getQuestions(Integer.parseInt(branchId),Integer.parseInt(subId));
 		}
 	
-	@GetMapping("/question/{id}") 
-	public Question getQuestion(@PathVariable String id) {
-		return this.queService.getQuestion(Integer.parseInt(id));
-	}
+	@GetMapping("/questions/{branchId}/{subId}/{queNo}")
+	public Question getQuestion(@PathVariable String branchId,@PathVariable String subId,@PathVariable String queNo) {
+		return queService.getQuestion(Integer.parseInt(branchId),Integer.parseInt(subId),Integer.parseInt(queNo));
+		}
+	
+	@GetMapping("/totalQue/{branchId}/{subId}")
+	public int gettotalQustions(@PathVariable String branchId,@PathVariable String subId) {
+		return queService.gettotalQustions(Integer.parseInt(branchId),Integer.parseInt(subId));
+		}
+	
+//	@GetMapping("/question/{id}") 
+//	public Question getQuestion(@PathVariable String id) {
+//		return this.queService.getQuestion(Integer.parseInt(id));
+//	}
 	
 	@PostMapping("/question")
 	public Question addQuestion(@RequestBody Question pro) {

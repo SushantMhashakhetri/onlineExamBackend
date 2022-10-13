@@ -3,6 +3,7 @@ package com.examportal.servicesImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.examportal.entity.Question;
@@ -18,9 +19,9 @@ public class QuestionServiceImpl implements QuestionService {
 	
 
 	@Override
-	public Question getQuestion(Integer id) {
+	public Question getQuestion(int branchId,int subId,int queNo) {
 		// TODO Auto-generated method stub
-		return qd.findById(id).get();
+		return qd.getQuestion(branchId, subId,PageRequest.of(queNo-1, 1));
 	}
 
 	@Override
@@ -53,6 +54,11 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public List<Question> getQuestions(int branchId, int subId) {
 		return qd.getQuestions(branchId, subId);
+	}
+
+	@Override
+	public int gettotalQustions(int branchId, int subId) {
+		return qd.gettotalQustions(branchId, subId);
 	}
     
 

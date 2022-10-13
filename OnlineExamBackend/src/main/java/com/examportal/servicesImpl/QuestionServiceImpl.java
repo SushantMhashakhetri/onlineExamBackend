@@ -16,11 +16,6 @@ public class QuestionServiceImpl implements QuestionService {
 	@Autowired 
 	QuestionDao qd;
 	
-	@Override
-	public List<Question> getQuestions() {
-		// TODO Auto-generated method stub
-		return qd.findAll();
-	}
 
 	@Override
 	public Question getQuestion(Integer id) {
@@ -53,6 +48,11 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public long countRows() {
         return qd.count();
+	}
+
+	@Override
+	public List<Question> getQuestions(int branchId, int subId) {
+		return qd.getQuestions(branchId, subId);
 	}
     
 

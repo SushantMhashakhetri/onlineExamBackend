@@ -7,14 +7,10 @@ import com.examportal.entity.Question;
 
 public interface QuestionService {
 	
-	List<Question> getQuestions();
-
+	List<Question> getQuestions(int branchId,int subId);
 	Question getQuestion(Integer id);
-
 	Question addQuestion(Question que);
-
 	Question updateQuestion(Question que);
-
 	Question deleteQuestion(Integer id);
 	
 	public long countRows();

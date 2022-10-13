@@ -17,7 +17,7 @@ import com.examportal.services.LoginService;
 
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class LoginController {
 	
 	@Autowired 

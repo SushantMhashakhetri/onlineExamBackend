@@ -60,6 +60,8 @@ public class QuestionServiceImpl implements QuestionService {
 	public int gettotalQustions(int branchId, int subId) {
 		return qd.gettotalQustions(branchId, subId);
 	}
+
+
     
 
 

@@ -19,6 +19,11 @@ public class SubjectServiceImpl implements SubjectService{
 		// TODO Auto-generated method stub
 		return sd.findAll();
 	}
+	
+	@Override
+	public List<Subject> getSubjectsByBranchId(int branchId) {
+		return sd.getSubjectsByBranchId(branchId);
+	}
 
 	@Override
 	public Subject getSubject(Integer id) {

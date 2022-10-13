@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.examportal.entity.Answer;
 import com.examportal.entity.Question;
+import com.examportal.entity.Subject;
 import com.examportal.services.QuestionService;
 import com.examportal.services.StudentService;
+import com.examportal.services.SubjectService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -24,11 +26,18 @@ public class StudentController {
 	private QuestionService queService;
 	
 	@Autowired
+	private SubjectService subService;
+	
+	@Autowired
 	private StudentService studentService;
 
 	@GetMapping("/exam/{branchId}/{subId}") 
 	public List<Question> getQuestion(@PathVariable String branchId,@PathVariable String subId) {
 		return queService.getQuestions(Integer.parseInt(branchId), Integer.parseInt(subId));
+	}
+	@GetMapping("/student/{branchId}") 
+	public List<Subject> getSubjects(@PathVariable String branchId) {
+		return subService.getSubjectsByBranchId(Integer.parseInt(branchId));
 	}
 	
 	@PostMapping("/ans")

@@ -7,6 +7,8 @@ import com.examportal.entity.Subject;
 public interface SubjectService {
 	
 	List<Subject> getSubjects();
+	
+	List<Subject> getSubjectsByBranchId(int branchId);
 
 	Subject getSubject(Integer id);
 

@@ -20,7 +20,7 @@ import com.examportal.services.QuestionService;
 import com.examportal.services.SubjectService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class AdminController {
 	
 	@Autowired
@@ -52,10 +52,7 @@ public class AdminController {
 		return  this.brService.deleteBranch(Integer.parseInt(id));
 	}
 	
-	
-	
-	
-	
+
 	@Autowired
 	private SubjectService subService;
 	
@@ -82,23 +79,13 @@ public class AdminController {
 		return  this.subService.deleteSubject(Integer.parseInt(id));
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@Autowired
 	private QuestionService queService;
 	
 	
-	@GetMapping("/questions")
-	public List<Question> getQuestions() {
-		return queService.getQuestions();
+	@GetMapping("/questions/{branchId}/{subId}")
+	public List<Question> getQuestions(@PathVariable String branchId,@PathVariable String subId) {
+		return queService.getQuestions(Integer.parseInt(branchId),Integer.parseInt(subId));
 		}
 	
 	@GetMapping("/question/{id}") 

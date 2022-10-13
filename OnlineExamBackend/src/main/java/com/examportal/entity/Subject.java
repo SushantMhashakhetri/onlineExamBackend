@@ -14,6 +14,7 @@ public class Subject {
 	private String subjectName;
 	
 	private int time;
+	private String branchName;
 	
 	private int branchId;
 	
@@ -58,12 +59,21 @@ public class Subject {
 		this.branchId = branchId;
 	}
 
-	public Subject(int subjectId, String subjectName, int time, int branchId) {
+	public Subject(int subjectId, String subjectName, int time, int branchId,String branchName) {
 		super();
 		this.subjectId = subjectId;
 		this.subjectName = subjectName;
 		this.time = time;
 		this.branchId = branchId;
+		this.branchName=branchName;
+	}
+
+	public String getBranchName() {
+		return branchName;
+	}
+
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
 	}
 	
 

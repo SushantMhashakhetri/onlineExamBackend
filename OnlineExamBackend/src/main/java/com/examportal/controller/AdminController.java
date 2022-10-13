@@ -68,6 +68,11 @@ public class AdminController {
 		return this.subService.getSubject(Integer.parseInt(id));
 	}
 	
+	@GetMapping("/subject/{branchid}") 
+	public Subject getSubjectforbranch(@PathVariable String id) {
+		return this.subService.getSubject(Integer.parseInt(id));
+	}
+	
 	@PostMapping("/subject")
 	public Subject addSubject(@RequestBody Subject sub) {
 		return this.subService.addSubject(sub);

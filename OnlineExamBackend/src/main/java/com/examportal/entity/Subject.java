@@ -58,6 +58,15 @@ public class Subject {
 	public void setBranchId(int branchId) {
 		this.branchId = branchId;
 	}
+	
+	public String getBranchName() {
+		return branchName;
+	}
+
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
+	}
+	
 
 	public Subject(int subjectId, String subjectName, int time, int branchId,String branchName) {
 		super();
@@ -68,13 +77,6 @@ public class Subject {
 		this.branchName=branchName;
 	}
 
-	public String getBranchName() {
-		return branchName;
-	}
 
-	public void setBranchName(String branchName) {
-		this.branchName = branchName;
-	}
-	
 
 }

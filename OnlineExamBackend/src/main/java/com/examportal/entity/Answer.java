@@ -17,7 +17,7 @@ public class Answer {
 	@Column(name="que_id",nullable = false)
 	private int que_id;
 	
-	@Column(name="selectedAns",nullable = false)
+	@Column(name="selectedAns")
 	private String selectedAns;
 	
 	@Column(name="corr_ans",nullable = false)

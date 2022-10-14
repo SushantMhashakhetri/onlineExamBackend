@@ -63,10 +63,10 @@ public class AdminController {
 		return subService.getSubjects();
 		}
 	
-	@GetMapping("/subject/{id}") 
-	public Subject getSubject(@PathVariable String id) {
-		return this.subService.getSubject(Integer.parseInt(id));
-	}
+//	@GetMapping("/subject/{id}") 
+//	public Subject getSubject(@PathVariable String id) {
+//		return this.subService.getSubject(Integer.parseInt(id));
+//	}
 	
 //	@GetMapping("/subject/{branchid}") 
 //	public Subject getSubjectforbranch(@PathVariable String id) {
